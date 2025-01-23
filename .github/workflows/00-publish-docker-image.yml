@@ -36,9 +36,9 @@ jobs:
           file: Dockerfile
           push: true
           tags: |
-            heyvaldemar/aws-kubectl:latest
-            heyvaldemar/aws-kubectl:${{ github.sha }}
+            rauerhans/aws-kubectl-docker:latest
+            rauerhans/aws-kubectl-docker:${{ github.sha }}
           platforms: linux/amd64,linux/arm64
           pull: true
-          cache-from: type=registry,ref=heyvaldemar/aws-kubectl:cache
+          cache-from: type=registry,ref=rauerhans/aws-kubectl-docker:cache
           cache-to: type=inline
