@@ -38,6 +38,7 @@ jobs:
           tags: |
             rauerhans/aws-kubectl-docker:latest
             rauerhans/aws-kubectl-docker:${{ github.sha }}
+
           platforms: linux/amd64,linux/arm64
           pull: true
           cache-from: type=registry,ref=rauerhans/aws-kubectl-docker:cache
