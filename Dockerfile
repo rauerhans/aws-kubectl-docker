@@ -45,6 +45,9 @@ RUN if [ "${KUBE_VERSION}" = "latest" ]; then \
   curl -LO "https://dl.k8s.io/release/${KUBE_VERSION}/bin/linux/amd64/kubectl" \
   && install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
+# Install envsubst
+RUN curl -L https://github.com/a8m/envsubst/releases/download/v1.2.0/envsubst-`uname -s`-`uname -m` -o envsubst && chmod +x envsubst && mv envsubst /usr/local/bin
+
 
 # Cleanup and final touches
 RUN apt-get update && apt-get clean && rm -rf /var/lib/apt/lists/*
